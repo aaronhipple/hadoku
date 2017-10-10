@@ -56,16 +56,18 @@ countEmpties (Puzzle rows) =
     length $ concatMap findEmpties rows
 
 -- |Generate a list of possible puzzle solutions.
-puzzleSolutions :: Puzzle -> [Puzzle]
-puzzleSolutions puzzle =
-  let
-    (Puzzle rows) = puzzle
-    emptyLength = countEmpties puzzle
-    groups = group $ concat rows
-    permutations = mapM (const [(minBound :: Value) ..]) [1..emptyLength]
-  in
-    -- TODO
-    []
+-- puzzleSolutions :: Puzzle -> [Puzzle]
+-- puzzleSolutions puzzle =
+--   let
+--     (Puzzle rows) = puzzle
+--     emptyLength = countEmpties puzzle
+--     permutations = mapM (const [(minBound :: Value) ..]) [1..emptyLength]
+--     init = ([], permutations)
+--     groups = group $ concat rows
+-- 
+--   in
+--     -- TODO
+--     []
 
 -- |Check if a puzzle is in a valid configuration.
 isValid :: Puzzle -> Bool
